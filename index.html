@@ -1,0 +1,2321 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="Bangla Tools Ultra - Premium Online Tools & Voice Studio">
+
+<title>বাংলা টুলস আল্ট্রা | Bangla Tools Ultra</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --red:#ff1744;
+  --red2:#d50035;
+  --bg:#070707;
+  --card:#111111;
+  --card2:#171717;
+  --text:#ffffff;
+  --muted:#9b9b9b;
+  --border:#292929;
+  --green:#00e676;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(255,23,68,.20),transparent 35%),
+    #070707;
+  color:white;
+  min-height:100vh;
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(7,7,7,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #222;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.logo span{
+  color:var(--red);
+}
+
+.nav-right{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.nav-btn{
+  background:#151515;
+  color:#fff;
+  border:1px solid #292929;
+  padding:9px 14px;
+  border-radius:10px;
+}
+
+.nav-btn:hover{
+  border-color:var(--red);
+}
+
+.hero{
+  max-width:1200px;
+  margin:auto;
+  padding:55px 18px 25px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  background:rgba(255,23,68,.1);
+  border:1px solid rgba(255,23,68,.35);
+  color:#ff5575;
+  padding:7px 13px;
+  border-radius:50px;
+  font-size:13px;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(35px,7vw,70px);
+  line-height:1;
+  font-weight:950;
+}
+
+.hero h1 span{
+  color:var(--red);
+}
+
+.hero p{
+  max-width:700px;
+  margin:18px auto 25px;
+  color:#aaa;
+  line-height:1.7;
+}
+
+.search{
+  width:100%;
+  max-width:650px;
+  margin:auto;
+  position:relative;
+}
+
+.search input{
+  width:100%;
+  padding:16px 20px;
+  border-radius:15px;
+  background:#111;
+  border:1px solid #292929;
+  color:white;
+  outline:none;
+}
+
+.search input:focus{
+  border-color:var(--red);
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:25px 18px 60px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:30px 0 15px;
+}
+
+.section-title h2{
+  font-size:24px;
+}
+
+.section-title small{
+  color:#777;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+
+.tool{
+  background:linear-gradient(145deg,#151515,#0d0d0d);
+  border:1px solid #252525;
+  border-radius:18px;
+  padding:20px;
+  min-height:145px;
+  transition:.2s;
+}
+
+.tool:hover{
+  transform:translateY(-3px);
+  border-color:#ff1744;
+  box-shadow:0 10px 35px rgba(255,23,68,.08);
+}
+
+.tool-icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.tool h3{
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.tool p{
+  color:#888;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.tool button{
+  width:100%;
+  margin-top:15px;
+  border:0;
+  background:#222;
+  color:#fff;
+  padding:10px;
+  border-radius:10px;
+}
+
+.tool button:hover{
+  background:var(--red);
+}
+
+.voice-card{
+  margin-top:25px;
+  background:
+    linear-gradient(145deg,rgba(255,23,68,.12),rgba(255,255,255,.02)),
+    #101010;
+  border:1px solid #343434;
+  border-radius:25px;
+  padding:25px;
+}
+
+.voice-head{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:flex-start;
+  margin-bottom:20px;
+}
+
+.voice-head h2{
+  font-size:28px;
+}
+
+.voice-head p{
+  color:#888;
+  margin-top:7px;
+}
+
+.live{
+  background:rgba(0,230,118,.08);
+  border:1px solid rgba(0,230,118,.25);
+  color:#00e676;
+  padding:7px 11px;
+  border-radius:30px;
+  font-size:12px;
+  white-space:nowrap;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  color:#aaa;
+  font-size:13px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  background:#090909;
+  border:1px solid #2b2b2b;
+  color:white;
+  border-radius:12px;
+  padding:13px;
+  outline:none;
+}
+
+.field textarea{
+  min-height:150px;
+  resize:vertical;
+  line-height:1.6;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--red);
+}
+
+.range-wrap{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.range-wrap input{
+  padding:0;
+  border:0;
+}
+
+.range-value{
+  min-width:45px;
+  text-align:center;
+  color:#ff5275;
+}
+
+.primary{
+  border:0;
+  background:linear-gradient(135deg,#ff1744,#c90032);
+  color:white;
+  font-weight:800;
+  padding:14px 18px;
+  border-radius:12px;
+  width:100%;
+  margin-top:15px;
+  box-shadow:0 10px 30px rgba(255,23,68,.18);
+}
+
+.primary:hover{
+  filter:brightness(1.1);
+}
+
+.primary:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.status{
+  display:none;
+  margin-top:15px;
+  padding:13px;
+  border-radius:12px;
+  background:#151515;
+  border:1px solid #292929;
+  color:#aaa;
+  text-align:center;
+}
+
+.status.show{
+  display:block;
+}
+
+.status.success{
+  border-color:rgba(0,230,118,.3);
+  color:#00e676;
+}
+
+.status.error{
+  border-color:rgba(255,23,68,.35);
+  color:#ff5575;
+}
+
+.audio-box{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border-radius:15px;
+  background:#0a0a0a;
+  border:1px solid #292929;
+}
+
+.audio-box.show{
+  display:block;
+}
+
+audio{
+  width:100%;
+}
+
+.download{
+  display:block;
+  text-align:center;
+  margin-top:12px;
+  color:#fff;
+  background:#222;
+  padding:11px;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(8px);
+  padding:15px;
+  overflow:auto;
+}
+
+.modal.show{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-box{
+  width:100%;
+  max-width:650px;
+  background:#111;
+  border:1px solid #303030;
+  border-radius:20px;
+  padding:22px;
+  position:relative;
+  max-height:90vh;
+  overflow:auto;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:12px;
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  font-size:20px;
+}
+
+.close:hover{
+  background:var(--red);
+}
+
+.modal-title{
+  margin-bottom:18px;
+  padding-right:40px;
+}
+
+.result{
+  margin-top:15px;
+  background:#090909;
+  border:1px solid #292929;
+  border-radius:12px;
+  padding:15px;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+
+.login-box{
+  max-width:430px;
+}
+
+.login-tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.login-tabs button{
+  flex:1;
+  padding:11px;
+  border:1px solid #292929;
+  background:#181818;
+  color:#aaa;
+  border-radius:10px;
+}
+
+.login-tabs button.active{
+  color:#fff;
+  border-color:var(--red);
+  background:rgba(255,23,68,.1);
+}
+
+footer{
+  text-align:center;
+  border-top:1px solid #1d1d1d;
+  padding:25px 15px;
+  color:#777;
+}
+
+footer strong{
+  color:#ff1744;
+}
+
+.hidden{
+  display:none!important;
+}
+
+@media(max-width:700px){
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .nav{
+    padding:12px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .hero{
+    padding-top:35px;
+  }
+
+  .voice-card{
+    padding:17px;
+  }
+
+  .voice-head{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">বাংলা টুলস <span>আল্ট্রা</span></div>
+
+    <div class="nav-right">
+      <button class="nav-btn" onclick="openLogin()">🔐 Login</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="badge">⚡ PREMIUM ONLINE TOOLKIT</div>
+
+  <h1>বাংলা টুলস <span>আল্ট্রা</span></h1>
+
+  <p>
+    Voice Studio, Calculator, Image Tools, Text Tools,
+    Developer Tools এবং আরও অনেক দরকারি tool — এক জায়গায়।
+  </p>
+
+  <div class="search">
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="🔎 Tool খুঁজুন..."
+      oninput="searchTools()"
+    >
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- VOICE STUDIO -->
+
+  <section id="voiceSection">
+
+    <div class="section-title">
+      <h2>🎙️ Voice Studio</h2>
+      <small>Powered by your backend</small>
+    </div>
+
+    <div class="voice-card">
+
+      <div class="voice-head">
+        <div>
+          <h2>AI Voice Generator</h2>
+          <p>Text লিখে Generate Voice করুন।</p>
+        </div>
+
+        <div class="live">● BACKEND READY</div>
+      </div>
+
+      <div class="form-grid">
+
+        <div class="field full">
+          <label>Text</label>
+
+          <textarea
+            id="voiceText"
+            placeholder="এখানে আপনার text লিখুন..."
+          >আসসালামু আলাইকুম। বাংলা টুলস আল্ট্রাতে আপনাকে স্বাগতম।</textarea>
+        </div>
+
+        <div class="field">
+          <label>Language</label>
+
+          <select id="language">
+            <option value="bn">🇧🇩 Bengali</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="hi">🇮🇳 Hindi</option>
+            <option value="es">🇪🇸 Spanish</option>
+            <option value="fr">🇫🇷 French</option>
+            <option value="de">🇩🇪 German</option>
+            <option value="ja">🇯🇵 Japanese</option>
+            <option value="ko">🇰🇷 Korean</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Voice ID</label>
+
+          <input
+            id="voiceId"
+            type="text"
+            placeholder="Cartesia Voice ID এখানে দিন"
+          >
+        </div>
+
+        <div class="field full">
+          <label>Speed</label>
+
+          <div class="range-wrap">
+
+            <input
+              id="speed"
+              type="range"
+              min="0.6"
+              max="1.5"
+              value="1"
+              step="0.1"
+              oninput="updateSpeed()"
+            >
+
+            <span class="range-value" id="speedValue">1.0x</span>
+
+          </div>
+        </div>
+
+      </div>
+
+      <button
+        id="generateBtn"
+        class="primary"
+        onclick="generateVoice()"
+      >
+        🎙️ Generate Voice
+      </button>
+
+      <div id="voiceStatus" class="status"></div>
+
+      <div id="audioBox" class="audio-box">
+
+        <audio id="audioPlayer" controls></audio>
+
+        <a
+          id="downloadAudio"
+          class="download"
+          download="bangla-tools-ultra-voice.wav"
+        >
+          ⬇️ Download Audio
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TOOLS -->
+
+  <section>
+
+    <div class="section-title">
+      <h2>🛠️ All Tools</h2>
+      <small id="toolCount">Tools</small>
+    </div>
+
+    <div class="grid" id="toolGrid">
+
+      <div class="tool" data-name="calculator হিসাব ক্যালকুলেটর">
+        <div class="tool-icon">🧮</div>
+        <h3>Calculator</h3>
+        <p>দ্রুত হিসাব করুন।</p>
+        <button onclick="openTool('calculator')">Open</button>
+      </div>
+
+      <div class="tool" data-name="password password generator নিরাপদ পাসওয়ার্ড">
+        <div class="tool-icon">🔐</div>
+        <h3>Password Generator</h3>
+        <p>Random password তৈরি করুন।</p>
+        <button onclick="openTool('password')">Open</button>
+      </div>
+
+      <div class="tool" data-name="age age calculator বয়স">
+        <div class="tool-icon">🎂</div>
+        <h3>Age Calculator</h3>
+        <p>আপনার বয়স হিসাব করুন।</p>
+        <button onclick="openTool('age')">Open</button>
+      </div>
+
+      <div class="tool" data-name="text counter word character">
+        <div class="tool-icon">📝</div>
+        <h3>Text Counter</h3>
+        <p>Word ও character count।</p>
+        <button onclick="openTool('counter')">Open</button>
+      </div>
+
+      <div class="tool" data-name="case converter uppercase lowercase">
+        <div class="tool-icon">🔤</div>
+        <h3>Case Converter</h3>
+        <p>Uppercase / lowercase করুন।</p>
+        <button onclick="openTool('case')">Open</button>
+      </div>
+
+      <div class="tool" data-name="image resize photo">
+        <div class="tool-icon">🖼️</div>
+        <h3>Image Resize</h3>
+        <p>Browser-এ image resize করুন।</p>
+        <button onclick="openTool('resize')">Open</button>
+      </div>
+
+      <div class="tool" data-name="color picker colour">
+        <div class="tool-icon">🎨</div>
+        <h3>Color Picker</h3>
+        <p>Color নির্বাচন করুন।</p>
+        <button onclick="openTool('color')">Open</button>
+      </div>
+
+      <div class="tool" data-name="json formatter developer">
+        <div class="tool-icon">📋</div>
+        <h3>JSON Formatter</h3>
+        <p>JSON format বা minify করুন।</p>
+        <button onclick="openTool('json')">Open</button>
+      </div>
+
+      <div class="tool" data-name="base64 encode decode developer">
+        <div class="tool-icon">🔑</div>
+        <h3>Base64 Tool</h3>
+        <p>Encode / Decode করুন।</p>
+        <button onclick="openTool('base64')">Open</button>
+      </div>
+
+      <div class="tool" data-name="url encoder decoder">
+        <div class="tool-icon">🔗</div>
+        <h3>URL Encoder</h3>
+        <p>URL encode / decode করুন।</p>
+        <button onclick="openTool('url')">Open</button>
+      </div>
+
+      <div class="tool" data-name="timestamp unix time">
+        <div class="tool-icon">⏱️</div>
+        <h3>Timestamp</h3>
+        <p>Unix timestamp converter।</p>
+        <button onclick="openTool('timestamp')">Open</button>
+      </div>
+
+      <div class="tool" data-name="click game game">
+        <div class="tool-icon">🎮</div>
+        <h3>Click Game</h3>
+        <p>ছোট্ট game খেলুন।</p>
+        <button onclick="openTool('game')">Open</button>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div>© 2026 <strong>বাংলা টুলস আল্ট্রা</strong></div>
+  <div style="margin-top:6px">Developed by <strong>MD RAFIM HOSSEN</strong></div>
+</footer>
+
+
+<!-- TOOL MODAL -->
+
+<div class="modal" id="toolModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeTool()">×</button>
+
+    <h2 class="modal-title" id="modalTitle"></h2>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+  <div class="modal-box login-box">
+
+    <button class="close" onclick="closeLogin()">×</button>
+
+    <h2 class="modal-title">🔐 Account</h2>
+
+    <div class="login-tabs">
+
+      <button
+        id="loginTab"
+        class="active"
+        onclick="showLoginForm()"
+      >
+        Login
+      </button>
+
+      <button
+        id="registerTab"
+        onclick="showRegisterForm()"
+      >
+        Register
+      </button>
+
+    </div>
+
+    <div id="loginForm">
+
+      <div class="field">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="Email">
+      </div>
+
+      <div class="field" style="margin-top:12px">
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="Password">
+      </div>
+
+      <button class="primary" onclick="loginUser()">
+        🔓 Login
+      </button>
+
+    </div>
+
+    <div id="registerForm" class="hidden">
+
+      <div class="field">
+        <label>Email</label>
+        <input id="regEmail" type="email" placeholder="Email">
+      </div>
+
+      <div class="field" style="margin-top:12px">
+        <label>Password</label>
+        <input id="regPassword" type="password" placeholder="Password">
+      </div>
+
+      <button class="primary" onclick="registerUser()">
+        ✨ Create Account
+      </button>
+
+    </div>
+
+    <div id="loginStatus" class="status"></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CONFIG
+===================================================== */
+
+const BACKEND_TTS_URL =
+  "https://bangla-tools-ultra-backend.onrender.com/api/tts";
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchTools(){
+
+  const query =
+    document.getElementById("searchInput").value
+      .toLowerCase()
+      .trim();
+
+  const cards =
+    document.querySelectorAll(".tool");
+
+  let count = 0;
+
+  cards.forEach(card => {
+
+    const name =
+      (card.dataset.name || "").toLowerCase();
+
+    if(!query || name.includes(query)){
+
+      card.style.display = "";
+
+      count++;
+
+    }else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("toolCount").textContent =
+    count + " Tools";
+
+}
+
+
+/* =====================================================
+   SPEED
+===================================================== */
+
+function updateSpeed(){
+
+  const speed =
+    document.getElementById("speed").value;
+
+  document.getElementById("speedValue").textContent =
+    Number(speed).toFixed(1) + "x";
+
+}
+
+
+/* =====================================================
+   VOICE GENERATOR
+===================================================== */
+
+async function generateVoice(){
+
+  const text =
+    document.getElementById("voiceText").value.trim();
+
+  const voiceId =
+    document.getElementById("voiceId").value.trim();
+
+  const language =
+    document.getElementById("language").value;
+
+  const speed =
+    Number(document.getElementById("speed").value);
+
+  const btn =
+    document.getElementById("generateBtn");
+
+  const status =
+    document.getElementById("voiceStatus");
+
+  const audioBox =
+    document.getElementById("audioBox");
+
+  const player =
+    document.getElementById("audioPlayer");
+
+  const download =
+    document.getElementById("downloadAudio");
+
+
+  if(!text){
+
+    showVoiceStatus(
+      "❌ আগে Text লিখুন।",
+      "error"
+    );
+
+    return;
+
+  }
+
+  if(!voiceId){
+
+    showVoiceStatus(
+      "❌ Voice ID দিন। Cartesia Voice ID ছাড়া backend voice তৈরি করতে পারবে না।",
+      "error"
+    );
+
+    return;
+
+  }
+
+
+  btn.disabled = true;
+
+  audioBox.classList.remove("show");
+
+  showVoiceStatus(
+    "⏳ Connecting to Voice Backend...",
+    ""
+  );
+
+
+  try{
+
+    showVoiceStatus(
+      "🔄 Sending text to backend...",
+      ""
+    );
+
+
+    const response =
+      await fetch(
+        BACKEND_TTS_URL,
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":"application/json"
+          },
+
+          body:JSON.stringify({
+
+            text:text,
+
+            voiceId:voiceId,
+
+            language:language,
+
+            speed:speed
+
+          })
+
+        }
+      );
+
+
+    if(!response.ok){
+
+      let errorText =
+        "Voice generation failed.";
+
+      try{
+
+        const data =
+          await response.json();
+
+        if(data.error){
+          errorText = data.error;
+        }
+
+      }catch(e){}
+
+      throw new Error(
+        errorText +
+        " (HTTP " +
+        response.status +
+        ")"
+      );
+
+    }
+
+
+    showVoiceStatus(
+      "🎙️ Generating audio...",
+      ""
+    );
+
+
+    const blob =
+      await response.blob();
+
+
+    if(!blob || blob.size === 0){
+
+      throw new Error(
+        "Backend returned empty audio."
+      );
+
+    }
+
+
+    const audioURL =
+      URL.createObjectURL(blob);
+
+
+    player.src =
+      audioURL;
+
+    download.href =
+      audioURL;
+
+    download.download =
+      "bangla-tools-ultra-voice.wav";
+
+
+    audioBox.classList.add("show");
+
+
+    showVoiceStatus(
+      "✅ SUCCESS — Voice generated successfully!",
+      "success"
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+    showVoiceStatus(
+      "❌ ERROR: " +
+      error.message +
+      " — আবার চেষ্টা করুন।",
+      "error"
+    );
+
+  }finally{
+
+    btn.disabled = false;
+
+  }
+
+}
+
+
+function showVoiceStatus(message,type){
+
+  const box =
+    document.getElementById("voiceStatus");
+
+  box.textContent =
+    message;
+
+  box.className =
+    "status show " +
+    (type || "");
+
+}
+
+
+/* =====================================================
+   TOOL MODAL
+===================================================== */
+
+function openTool(type){
+
+  const modal =
+    document.getElementById("toolModal");
+
+  const title =
+    document.getElementById("modalTitle");
+
+  const content =
+    document.getElementById("modalContent");
+
+
+  modal.classList.add("show");
+
+
+  if(type === "calculator"){
+
+    title.textContent = "🧮 Calculator";
+
+    content.innerHTML = `
+
+      <div class="field">
+        <label>Expression</label>
+
+        <input
+          id="calcInput"
+          placeholder="Example: 25*4+10"
+        >
+      </div>
+
+      <button class="primary" onclick="calculate()">
+        Calculate
+      </button>
+
+      <div class="result" id="calcResult">
+        Result এখানে আসবে।
+      </div>
+
+    `;
+
+  }
+
+
+  else if(type === "password"){
+
+    title.textContent = "🔐 Password Generator";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <label>Password Length</label>
+
+        <input
+          id="passLength"
+          type="number"
+          min="4"
+          max="100"
+          value="16"
+        >
+
+      </div>
+
+      <button class="primary" onclick="generatePassword()">
+        Generate Password
+      </button>
+
+      <div class="result" id="passResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "age"){
+
+    title.textContent = "🎂 Age Calculator";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <label>Date of Birth</label>
+
+        <input
+          id="birthDate"
+          type="date"
+        >
+
+      </div>
+
+      <button class="primary" onclick="calculateAge()">
+        Calculate Age
+      </button>
+
+      <div class="result" id="ageResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "counter"){
+
+    title.textContent = "📝 Text Counter";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <label>Your Text</label>
+
+        <textarea
+          id="counterText"
+          oninput="updateCounter()"
+          placeholder="Text লিখুন..."
+        ></textarea>
+
+      </div>
+
+      <div class="result" id="counterResult">
+        Characters: 0
+        Words: 0
+        Lines: 0
+      </div>
+
+    `;
+
+  }
+
+
+  else if(type === "case"){
+
+    title.textContent = "🔤 Case Converter";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <textarea
+          id="caseText"
+          placeholder="Text লিখুন..."
+        ></textarea>
+
+      </div>
+
+      <button class="primary" onclick="toUpperCaseText()">
+        UPPERCASE
+      </button>
+
+      <button class="primary" onclick="toLowerCaseText()">
+        lowercase
+      </button>
+
+      <div class="result" id="caseResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "resize"){
+
+    title.textContent = "🖼️ Image Resize";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <label>Select Image</label>
+
+        <input
+          id="imageFile"
+          type="file"
+          accept="image/*"
+        >
+
+      </div>
+
+      <div class="field" style="margin-top:12px">
+
+        <label>Width</label>
+
+        <input
+          id="imageWidth"
+          type="number"
+          placeholder="800"
+        >
+
+      </div>
+
+      <button class="primary" onclick="resizeImage()">
+        Resize Image
+      </button>
+
+      <div id="resizeResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "color"){
+
+    title.textContent = "🎨 Color Picker";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <label>Choose Color</label>
+
+        <input
+          id="colorInput"
+          type="color"
+          value="#ff1744"
+          oninput="updateColor()"
+          style="height:70px"
+        >
+
+      </div>
+
+      <div class="result" id="colorResult">
+        #ff1744
+      </div>
+
+    `;
+
+  }
+
+
+  else if(type === "json"){
+
+    title.textContent = "📋 JSON Formatter";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <textarea
+          id="jsonInput"
+          placeholder='{"name":"Bangla Tools Ultra"}'
+        ></textarea>
+
+      </div>
+
+      <button class="primary" onclick="formatJSON()">
+        Format JSON
+      </button>
+
+      <button class="primary" onclick="minifyJSON()">
+        Minify JSON
+      </button>
+
+      <div class="result" id="jsonResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "base64"){
+
+    title.textContent = "🔑 Base64";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <textarea
+          id="base64Input"
+          placeholder="Text..."
+        ></textarea>
+
+      </div>
+
+      <button class="primary" onclick="encodeBase64()">
+        Encode
+      </button>
+
+      <button class="primary" onclick="decodeBase64()">
+        Decode
+      </button>
+
+      <div class="result" id="base64Result"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "url"){
+
+    title.textContent = "🔗 URL Encoder";
+
+    content.innerHTML = `
+
+      <div class="field">
+
+        <textarea
+          id="urlInput"
+          placeholder="Text or URL..."
+        ></textarea>
+
+      </div>
+
+      <button class="primary" onclick="encodeURL()">
+        Encode URL
+      </button>
+
+      <button class="primary" onclick="decodeURL()">
+        Decode URL
+      </button>
+
+      <div class="result" id="urlResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "timestamp"){
+
+    title.textContent = "⏱️ Timestamp";
+
+    content.innerHTML = `
+
+      <button class="primary" onclick="currentTimestamp()">
+        Current Timestamp
+      </button>
+
+      <div class="result" id="timestampResult"></div>
+
+    `;
+
+  }
+
+
+  else if(type === "game"){
+
+    title.textContent = "🎮 Click Game";
+
+    content.innerHTML = `
+
+      <div
+        style="
+          text-align:center;
+          padding:25px;
+        "
+      >
+
+        <div
+          id="gameScore"
+          style="
+            font-size:35px;
+            font-weight:900;
+            margin-bottom:20px;
+          "
+        >
+          0
+        </div>
+
+        <button
+          onclick="clickGame()"
+          style="
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            border:0;
+            background:#ff1744;
+            color:white;
+            font-size:25px;
+            font-weight:900;
+          "
+        >
+          TAP!
+        </button>
+
+      </div>
+
+    `;
+
+    window.gameScore = 0;
+
+  }
+
+}
+
+
+/* =====================================================
+   CLOSE TOOL
+===================================================== */
+
+function closeTool(){
+
+  document
+    .getElementById("toolModal")
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   CALCULATOR
+===================================================== */
+
+function calculate(){
+
+  const input =
+    document.getElementById("calcInput").value;
+
+  const result =
+    document.getElementById("calcResult");
+
+  if(!input){
+
+    result.textContent =
+      "কিছু লিখুন।";
+
+    return;
+
+  }
+
+
+  try{
+
+    /*
+      Basic calculator only.
+      Mathematical characters are filtered.
+    */
+
+    if(!/^[0-9+\-*/().%\s]+$/.test(input)){
+
+      throw new Error(
+        "Invalid expression"
+      );
+
+    }
+
+    const value =
+      Function(
+        '"use strict"; return (' +
+        input +
+        ')'
+      )();
+
+    result.textContent =
+      String(value);
+
+  }catch(e){
+
+    result.textContent =
+      "❌ Invalid calculation";
+
+  }
+
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+function generatePassword(){
+
+  let length =
+    Number(
+      document.getElementById("passLength").value
+    );
+
+  if(!length || length < 4)
+    length = 16;
+
+  if(length > 100)
+    length = 100;
+
+
+  const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
+
+  let password = "";
+
+  const array =
+    new Uint32Array(length);
+
+  crypto.getRandomValues(array);
+
+  for(let i=0;i<length;i++){
+
+    password +=
+      chars[array[i] % chars.length];
+
+  }
+
+
+  document.getElementById("passResult").textContent =
+    password;
+
+}
+
+
+/* =====================================================
+   AGE
+===================================================== */
+
+function calculateAge(){
+
+  const value =
+    document.getElementById("birthDate").value;
+
+  const result =
+    document.getElementById("ageResult");
+
+
+  if(!value){
+
+    result.textContent =
+      "Date of birth নির্বাচন করুন।";
+
+    return;
+
+  }
+
+
+  const birth =
+    new Date(value + "T00:00:00");
+
+  const today =
+    new Date();
+
+
+  if(birth > today){
+
+    result.textContent =
+      "❌ ভবিষ্যতের date দেওয়া যাবে না।";
+
+    return;
+
+  }
+
+
+  let years =
+    today.getFullYear() -
+    birth.getFullYear();
+
+  let months =
+    today.getMonth() -
+    birth.getMonth();
+
+  let days =
+    today.getDate() -
+    birth.getDate();
+
+
+  if(days < 0){
+
+    months--;
+
+    days += new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    ).getDate();
+
+  }
+
+
+  if(months < 0){
+
+    years--;
+
+    months += 12;
+
+  }
+
+
+  result.textContent =
+    `আপনার বয়স: ${years} বছর ${months} মাস ${days} দিন`;
+
+}
+
+
+/* =====================================================
+   TEXT COUNTER
+===================================================== */
+
+function updateCounter(){
+
+  const text =
+    document.getElementById("counterText").value;
+
+  const characters =
+    text.length;
+
+  const words =
+    text.trim()
+      ? text.trim().split(/\s+/).length
+      : 0;
+
+  const lines =
+    text
+      ? text.split("\n").length
+      : 0;
+
+
+  document.getElementById("counterResult").textContent =
+    `Characters: ${characters}
+Words: ${words}
+Lines: ${lines}`;
+
+}
+
+
+/* =====================================================
+   CASE
+===================================================== */
+
+function toUpperCaseText(){
+
+  const text =
+    document.getElementById("caseText").value;
+
+  document.getElementById("caseResult").textContent =
+    text.toUpperCase();
+
+}
+
+
+function toLowerCaseText(){
+
+  const text =
+    document.getElementById("caseText").value;
+
+  document.getElementById("caseResult").textContent =
+    text.toLowerCase();
+
+}
+
+
+/* =====================================================
+   IMAGE RESIZE
+===================================================== */
+
+function resizeImage(){
+
+  const file =
+    document.getElementById("imageFile").files[0];
+
+  const width =
+    Number(
+      document.getElementById("imageWidth").value
+    );
+
+  const result =
+    document.getElementById("resizeResult");
+
+
+  if(!file){
+
+    result.innerHTML =
+      `<div class="result">❌ Image নির্বাচন করুন।</div>`;
+
+    return;
+
+  }
+
+
+  if(!width || width < 1){
+
+    result.innerHTML =
+      `<div class="result">❌ Width দিন।</div>`;
+
+    return;
+
+  }
+
+
+  const img =
+    new Image();
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload =
+    function(e){
+
+      img.onload =
+        function(){
+
+          const scale =
+            width / img.width;
+
+          const height =
+            Math.round(img.height * scale);
+
+          const canvas =
+            document.createElement("canvas");
+
+          canvas.width =
+            width;
+
+          canvas.height =
+            height;
+
+
+          const ctx =
+            canvas.getContext("2d");
+
+          ctx.drawImage(
+            img,
+            0,
+            0,
+            width,
+            height
+          );
+
+
+          canvas.toBlob(
+            function(blob){
+
+              const url =
+                URL.createObjectURL(blob);
+
+              result.innerHTML = `
+
+                <div class="result">
+                  New size: ${width} × ${height}
+                </div>
+
+                <a
+                  class="download"
+                  href="${url}"
+                  download="resized-image.png"
+                >
+                  ⬇️ Download Resized Image
+                </a>
+
+              `;
+
+            },
+            "image/png"
+          );
+
+        };
+
+
+      img.src =
+        e.target.result;
+
+    };
+
+
+  reader.readAsDataURL(file);
+
+}
+
+
+/* =====================================================
+   COLOR
+===================================================== */
+
+function updateColor(){
+
+  const color =
+    document.getElementById("colorInput").value;
+
+  document.getElementById("colorResult").textContent =
+    color;
+
+}
+
+
+/* =====================================================
+   JSON
+===================================================== */
+
+function formatJSON(){
+
+  const input =
+    document.getElementById("jsonInput").value;
+
+  const result =
+    document.getElementById("jsonResult");
+
+
+  try{
+
+    const data =
+      JSON.parse(input);
+
+    result.textContent =
+      JSON.stringify(
+        data,
+        null,
+        2
+      );
+
+  }catch(e){
+
+    result.textContent =
+      "❌ Invalid JSON";
+
+  }
+
+}
+
+
+function minifyJSON(){
+
+  const input =
+    document.getElementById("jsonInput").value;
+
+  const result =
+    document.getElementById("jsonResult");
+
+
+  try{
+
+    const data =
+      JSON.parse(input);
+
+    result.textContent =
+      JSON.stringify(data);
+
+  }catch(e){
+
+    result.textContent =
+      "❌ Invalid JSON";
+
+  }
+
+}
+
+
+/* =====================================================
+   BASE64
+===================================================== */
+
+function encodeBase64(){
+
+  const text =
+    document.getElementById("base64Input").value;
+
+  try{
+
+    const encoded =
+      btoa(
+        unescape(
+          encodeURIComponent(text)
+        )
+      );
+
+    document.getElementById("base64Result")
+      .textContent = encoded;
+
+  }catch(e){
+
+    document.getElementById("base64Result")
+      .textContent = "❌ Error";
+
+  }
+
+}
+
+
+function decodeBase64(){
+
+  const text =
+    document.getElementById("base64Input").value;
+
+  try{
+
+    const decoded =
+      decodeURIComponent(
+        escape(
+          atob(text)
+        )
+      );
+
+    document.getElementById("base64Result")
+      .textContent = decoded;
+
+  }catch(e){
+
+    document.getElementById("base64Result")
+      .textContent = "❌ Invalid Base64";
+
+  }
+
+}
+
+
+/* =====================================================
+   URL
+===================================================== */
+
+function encodeURL(){
+
+  const text =
+    document.getElementById("urlInput").value;
+
+  document.getElementById("urlResult")
+    .textContent =
+      encodeURIComponent(text);
+
+}
+
+
+function decodeURL(){
+
+  const text =
+    document.getElementById("urlInput").value;
+
+  try{
+
+    document.getElementById("urlResult")
+      .textContent =
+        decodeURIComponent(text);
+
+  }catch(e){
+
+    document.getElementById("urlResult")
+      .textContent =
+        "❌ Invalid encoded URL";
+
+  }
+
+}
+
+
+/* =====================================================
+   TIMESTAMP
+===================================================== */
+
+function currentTimestamp(){
+
+  const timestamp =
+    Math.floor(
+      Date.now() / 1000
+    );
+
+  document.getElementById("timestampResult")
+    .textContent =
+      timestamp;
+
+}
+
+
+/* =====================================================
+   GAME
+===================================================== */
+
+function clickGame(){
+
+  window.gameScore =
+    (window.gameScore || 0) + 1;
+
+  document.getElementById("gameScore")
+    .textContent =
+      window.gameScore;
+
+}
+
+
+/* =====================================================
+   LOGIN UI
+===================================================== */
+
+function openLogin(){
+
+  document
+    .getElementById("loginModal")
+    .classList.add("show");
+
+}
+
+
+function closeLogin(){
+
+  document
+    .getElementById("loginModal")
+    .classList.remove("show");
+
+}
+
+
+function showLoginForm(){
+
+  document
+    .getElementById("loginForm")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("registerForm")
+    .classList.add("hidden");
+
+  document
+    .getElementById("loginTab")
+    .classList.add("active");
+
+  document
+    .getElementById("registerTab")
+    .classList.remove("active");
+
+}
+
+
+function showRegisterForm(){
+
+  document
+    .getElementById("loginForm")
+    .classList.add("hidden");
+
+  document
+    .getElementById("registerForm")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("loginTab")
+    .classList.remove("active");
+
+  document
+    .getElementById("registerTab")
+    .classList.add("active");
+
+}
+
+
+/*
+  NOTE:
+  This is only local/demo account storage.
+  It is NOT secure authentication.
+*/
+
+function registerUser(){
+
+  const email =
+    document.getElementById("regEmail")
+      .value.trim();
+
+  const password =
+    document.getElementById("regPassword")
+      .value;
+
+
+  if(!email || !password){
+
+    showLoginStatus(
+      "❌ Email এবং password দিন।",
+      "error"
+    );
+
+    return;
+
+  }
+
+
+  localStorage.setItem(
+    "BTU_demo_user",
+    JSON.stringify({
+      email:email,
+      password:password
+    })
+  );
+
+
+  showLoginStatus(
+    "✅ Account created locally.",
+    "success"
+  );
+
+}
+
+
+function loginUser(){
+
+  const email =
+    document.getElementById("loginEmail")
+      .value.trim();
+
+  const password =
+    document.getElementById("loginPassword")
+      .value;
+
+
+  let saved = null;
+
+
+  try{
+
+    saved =
+      JSON.parse(
+        localStorage.getItem("BTU_demo_user")
+      );
+
+  }catch(e){}
+
+
+  if(
+    saved &&
+    saved.email === email &&
+    saved.password === password
+  ){
+
+    showLoginStatus(
+      "✅ Login successful.",
+      "success"
+    );
+
+  }else{
+
+    showLoginStatus(
+      "❌ Email অথবা password ভুল।",
+      "error"
+    );
+
+  }
+
+}
+
+
+function showLoginStatus(message,type){
+
+  const box =
+    document.getElementById("loginStatus");
+
+  box.textContent =
+    message;
+
+  box.className =
+    "status show " +
+    type;
+
+}
+
+
+/* =====================================================
+   MODAL OUTSIDE CLICK
+===================================================== */
+
+document
+  .getElementById("toolModal")
+  .addEventListener(
+    "click",
+    function(e){
+
+      if(e.target === this){
+        closeTool();
+      }
+
+    }
+  );
+
+
+document
+  .getElementById("loginModal")
+  .addEventListener(
+    "click",
+    function(e){
+
+      if(e.target === this){
+        closeLogin();
+      }
+
+    }
+  );
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
+
+searchTools();
+updateSpeed();
+
+</script>
+
+</body>
+</html>
+```
